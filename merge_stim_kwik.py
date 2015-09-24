@@ -14,14 +14,14 @@ birdID = 1215
 birdID_str = 'st' + str(birdID)
 
 bird_folder = experiment_folder + birdID_str 
-kwik_folder = bird_folder +'/man_sort/pen2/'
+kwik_folder = bird_folder +'/man_sort/pen2/fix_alignment/'
 spike2mat_folder = bird_folder + '/matfiles/'
 
 # These are required just because things are not in the right format right now
 s2_data_folder = spike2mat_folder + 'Pen01_Rgt_AP500_ML1000__Site01_Z2000__st1215_cat_P01_S01_2ndPen/'
 s2_data_file = s2_data_folder + 'Subst1215Pen01Site01Epc01File01_06-30-15+20-42-42_st1215_block.mat'
 
-kwik_data_file = kwik_folder + 'st1215_cat_P01_S01_2ndPen.kwik'
+kwik_data_file = kwik_folder + 'st1215_cat_P01_S01_2ndPen_fixalignment.kwik'
 
 #Import files
         
