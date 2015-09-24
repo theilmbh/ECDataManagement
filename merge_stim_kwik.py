@@ -37,6 +37,8 @@ samps_stim_end = []
 stim_name_store = []
 
 print(s2_data_file)
+
+recording_start_seconds = 26.011481
 #Open spike2 mat file, readonly
 f = h5.File(s2_data_file, 'r')
 
@@ -58,20 +60,20 @@ dt = f['Port_1']['interval'][0]
 fs = 1.0/dt
     
 # Build array of samples / times at which events occur: event 60 Start of Stimulus
-times_60 = times[codes == 60]
+times_60 = times[codes == 60] - recording_start_seconds
 samps_60 = np.floor(fs*times_60)  # this is iffy...
 
     
 # Event 62: End of stimulus
-times_62 = times[codes == 62]
+times_62 = times[codes == 62] - recording_start_seconds
 samps_62 = np.floor(fs*times_62)
 
 # Event 41: end of intertrial interval trial
-times_41 = times[codes == 41]
+times_41 = times[codes == 41] - recording_start_seconds
 samps_41 = np.floor(fs*times_41)
 
 # Event 40: start of intertrial interval
-times_40 = times[codes == 40]
+times_40 = times[codes == 40] - recording_start_seconds
 samps_40 = np.floor(fs*times_40)
     
 # Get Stimulus names    
